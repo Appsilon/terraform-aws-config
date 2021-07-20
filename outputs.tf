@@ -1,10 +1,14 @@
-# ------------------------------------------------------------------------------
-# Output
-# ------------------------------------------------------------------------------
-output "name_prefix" {
-  value = var.name_prefix
+output "required_tags_rule_arn" {
+  description = "The ARN of the required-tags config rule."
+  value       = concat(aws_config_config_rule.required-tags.*.arn, [""])[0]
 }
 
-output "tags" {
-  value = var.tags
+output "aws_config_role_arn" {
+  description = "The ARN of the AWS config role."
+  value       = concat(aws_iam_role.main.*.arn, [""])[0]
+}
+
+output "aws_config_role_name" {
+  description = "The name of the IAM role used by AWS config"
+  value       = concat(aws_iam_role.main.*.name, [""])[0]
 }

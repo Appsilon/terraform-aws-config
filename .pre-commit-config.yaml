@@ -23,6 +23,7 @@ repos:
     rev: v0.26.0
     hooks:
       - id: markdownlint
+        exclude: README.md
 
   - repo: git://github.com/antonbabenko/pre-commit-terraform
     rev: v1.45.0
