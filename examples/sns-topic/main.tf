@@ -5,7 +5,7 @@ data "aws_partition" "current" {}
 #
 
 module "config_logs" {
-  source  = "appsilon/logs/aws"
+  source  = "trussworks/logs/aws"
   version = "~> 10"
 
   s3_bucket_name     = var.config_logs_bucket
